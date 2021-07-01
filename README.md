@@ -1,4 +1,4 @@
-![tp2](https://github.com/Maferep/algo3_tp2_ALGOTEG/actions/workflows/build.yml/badge.svg) ![codecov](https://github.com/Maferep/algo3_tp2_ALGOTEG/branch/master/graph/badge.svg)](https://codecov.io/gh/Maferep/algo3_tp2_ALGOTEG)
+![tp2](https://github.com/Maferep/algo3_tp2_ALGOTEG/actions/workflows/build.yml/badge.svg) [![codecov](https://github.com/Maferep/algo3_tp2_ALGOTEG/branch/master/graph/badge.svg)](https://codecov.io/gh/Maferep/algo3_tp2_ALGOTEG)
 
 # TP2 Algoritmos 3: {nombre} 
 
