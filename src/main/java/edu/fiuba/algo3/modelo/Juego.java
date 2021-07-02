@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Juego {
 
-	public void agregarJugadores(String string, String string2) {
+	public void agregarJugadores(String... string) {
 	}
 
 	public void colocarEjercitos(String string, int i, String string2) {

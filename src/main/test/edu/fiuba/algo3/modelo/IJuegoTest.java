@@ -10,6 +10,11 @@ public class IJuegoTest {
         juego.agregarJugadores("Pablo", "Avneet");
         assertEquals(juego.cantidadDeJugadores(), 2);
     }
+    void test01Agregar4Jugadores() {
+        Juego juego = new Juego();
+        juego.agregarJugadores("Pablo", "Avneet", "Sasha", "Sam");
+        assertEquals(juego.cantidadDeJugadores(), 4);
+    }
 
     @Test
     void test02ColocarEjercitos() {
