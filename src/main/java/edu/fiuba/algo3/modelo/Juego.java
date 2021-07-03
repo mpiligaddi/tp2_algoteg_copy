@@ -15,7 +15,11 @@ public class Juego {
 			jugadores.add(new Jugador(n));
 	}
 
-	public void colocarEjercitos(String string, int i, String string2) {
+	public void colocarEjercitos(String jugador, int cantidad, String pais) throws Exception {
+		jugadores.stream()
+			.filter(j -> j.obtenerNombre() == jugador)
+			.findAny().get()
+			.asignarEjercitosAPais(cantidad, pais);
 	}
 
 	public List<Object> ejercitosDe(String string) {
@@ -31,5 +35,15 @@ public class Juego {
 			.filter(j -> j.obtenerNombre() == nombre)
 			.findAny().get()
 			.agregarEjercitos(i);
+	}
+
+	public void asignarPaisesAleatoriamente() {
+	}
+
+	public void asignarPaisAJugador(String nombreJugador, String pais) {
+		jugadores.stream()
+		.filter(j -> j.nombre == nombreJugador)
+		.findAny().get()
+		.asignarPais(pais);
 	}
 }
