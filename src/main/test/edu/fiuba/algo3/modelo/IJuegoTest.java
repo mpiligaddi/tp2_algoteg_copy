@@ -21,6 +21,8 @@ public class IJuegoTest {
     @Test
     void test02ColocarEjercitos() {
         Juego juego = new Juego();
+        juego.agregarJugadores("Pablo", "Avneet", "Sasha", "Sam");
+        juego.agregarEjercitosAlJugador("Pablo", 3);
         juego.colocarEjercitos("Pablo", 3, "Francia");
         assertEquals(juego.ejercitosDe("Pablo").size(), 3);
     }
