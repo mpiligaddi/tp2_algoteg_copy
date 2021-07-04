@@ -80,4 +80,16 @@ public class Juego {
 
 		return jugador.obtenerPaises();
 	}
+
+	public void realizarAtaque(String atacante, String defensor) {
+		Jugador jugadorAtacante = jugadores.stream()
+				.filter(j -> j.obtenerNombre() == atacante)
+				.findAny().orElseThrow();
+
+		Jugador jugadorDefensor = jugadores.stream()
+				.filter(j -> j.obtenerNombre() == defensor)
+				.findAny().orElseThrow();
+
+		jugadorAtacante.atacar(jugadorDefensor.obtenerCantidadEjercitos());
+	}
 }

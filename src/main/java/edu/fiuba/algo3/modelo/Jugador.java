@@ -39,5 +39,6 @@ public class Jugador {
 			throw new Exception();
 		
 	}
+	public void atacar(int cantidadSoldadosDefensor) {}
 
 }
