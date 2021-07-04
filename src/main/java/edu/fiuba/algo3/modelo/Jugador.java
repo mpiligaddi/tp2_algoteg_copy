@@ -6,14 +6,21 @@ public class Jugador {
 	String nombre;
 	List<String> paises;
 	List<Object> ejercitos;
+
 	public Jugador(String n) {
 		nombre = n;
 		paises = new ArrayList<String>();
 		ejercitos = new ArrayList<Object>();
 	}
+
+	public List<String> obtenerPaises() {
+		return this.paises;
+	}
+
 	public Object obtenerNombre() {
 		return nombre;
 	}
+
 	public void agregarEjercitos(int cantidad) {
 		for (int i = 0; i < cantidad; i++){
 			ejercitos.add(new Object());
