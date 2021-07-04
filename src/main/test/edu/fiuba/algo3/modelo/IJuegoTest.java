@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import java.util.*;
+import java.util.stream.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class IJuegoTest {
     @Test
-    public void test01AgregarJugadores() {
+    public void test00AgregarJugadores() {
         Juego juego = new Juego();
         juego.agregarJugadores("Pablo", "Avneet");
         assertEquals(juego.cantidadDeJugadores(), 2);
