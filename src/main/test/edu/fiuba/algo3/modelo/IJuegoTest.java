@@ -32,7 +32,7 @@ public class IJuegoTest {
         juego.asignarPaisAJugador("Pablo", "Francia");
         assertDoesNotThrow(() -> juego.colocarEjercitos("Pablo", 3, "Francia"));
 
-        assertEquals(juego.ejercitosDe("Pablo").size(), 3);
+        assertEquals(juego.cantidadEjercitosDe("Pablo"), 3);
     }
 
     @Test
@@ -55,9 +55,9 @@ public class IJuegoTest {
         Juego juego = new Juego();
         juego.agregarJugadores("Pablo", "Avneet", "Sasha", "Sam");
         juego.agregarEjercitosAlJugador("Pablo", 3);
-        assertEquals(juego.ejercitosDe("Pablo").size(), 3);
+        assertEquals(juego.cantidadEjercitosDe("Pablo"), 3);
         juego.agregarEjercitosAlJugador("Pablo", 4);
-        assertEquals(juego.ejercitosDe("Pablo").size(), 7);
+        assertEquals(juego.cantidadEjercitosDe("Pablo"), 7);
     }
 
     
