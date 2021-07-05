@@ -23,7 +23,7 @@ public class IJuegoTest {
     }
 
     @Test
-    public void test02ColocarEjercitos() {
+    public void test02ColocarEjercitos() throws Exception {
         Juego juego = new Juego();
         juego.agregarJugadores("Pablo", "Avneet", "Sasha", "Sam");
         juego.agregarEjercitosAlJugador("Pablo", 3);
@@ -51,7 +51,7 @@ public class IJuegoTest {
     }
 
     @Test
-    public void test04AgregarVariosSoldados() {
+    public void test04AgregarVariosSoldados() throws Exception {
         Juego juego = new Juego();
         juego.agregarJugadores("Pablo", "Avneet", "Sasha", "Sam");
         juego.agregarEjercitosAlJugador("Pablo", 3);
@@ -61,7 +61,7 @@ public class IJuegoTest {
     }
 
     @Test
-    public void test05AtaqueDeUnPaisAOtro() {
+    public void test05AtaqueDeUnPaisAOtro() throws Exception {
         Juego juego = new Juego();
         juego.agregarJugadores("Pablo", "Mohammed");
         juego.asignarPaisAJugador("Pablo", "Colombia");

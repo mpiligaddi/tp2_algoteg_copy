@@ -57,7 +57,7 @@ public class Juego {
 		return jugadores.size();
     }
 
-	public void agregarEjercitosAlJugador(String nombre, int i) {
+	public void agregarEjercitosAlJugador(String nombre, int i) throws Exception {
 		jugadores.stream()
 			.filter(j -> j.obtenerNombre() == nombre)
 			.findAny().get()
@@ -101,7 +101,8 @@ public class Juego {
 		Ataque ataque = new Ataque(atacante, defensor, 3);
 	}
 
-	public void agregarEjercitosAlPais(String string, int i) {
+	public void agregarEjercitosAlPais(String pais, int cantidadEjercitos) {
+		paisPorNombre(pais).agregarEjercitos(cantidadEjercitos);
 	}
 
 	//Auxiliares

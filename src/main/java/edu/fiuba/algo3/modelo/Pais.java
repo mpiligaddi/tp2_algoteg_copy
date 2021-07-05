@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 public class Pais {
     String nombre;
+    int ejercitos;
 
 	public Pais(String n) {
         this.nombre = n;
@@ -12,7 +13,11 @@ public class Pais {
 	}
 
 	public int cantidadEjercitos() {
-		return 0;
+		return ejercitos;
+	}
+
+	public void agregarEjercitos(int cantidadEjercitos) {
+        ejercitos += cantidadEjercitos;
 	}
     
 }
