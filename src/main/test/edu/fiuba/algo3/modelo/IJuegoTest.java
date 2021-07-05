@@ -28,9 +28,9 @@ public class IJuegoTest {
         juego.agregarJugadores("Pablo", "Avneet", "Sasha", "Sam");
         juego.agregarEjercitosAlJugador("Pablo", 3);
 
-        assertThrows(Exception.class, () -> juego.colocarEjercitos("Pablo", 3, "Francia"));
-        juego.asignarPaisAJugador("Pablo", "Francia");
-        assertDoesNotThrow(() -> juego.colocarEjercitos("Pablo", 3, "Francia"));
+        assertThrows(Exception.class, () -> juego.colocarEjercitos("Pablo", 3, "Colombia"));
+        juego.asignarPaisAJugador("Pablo", "Colombia");
+        assertDoesNotThrow(() -> juego.colocarEjercitos("Pablo", 3, "Colombia"));
 
         assertEquals(juego.cantidadEjercitosDe("Pablo"), 3);
     }
