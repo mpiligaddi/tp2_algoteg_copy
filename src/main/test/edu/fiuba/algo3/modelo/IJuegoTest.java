@@ -49,8 +49,8 @@ public class IJuegoTest {
             .stream()
             .flatMap( j -> juego.paisesDe(j).stream())
             .collect(Collectors.toList());
-        assertEquals(juego.getPaises().size(), paisesDeJugadores.size());
-        assertEquals(new HashSet<>(juego.getPaises()), new HashSet<>(paisesDeJugadores));
+        assertEquals(juego.obtenerPaises().size(), paisesDeJugadores.size());
+        assertEquals(new HashSet<>(juego.obtenerPaises()), new HashSet<>(paisesDeJugadores));
     }
 
     @Test
