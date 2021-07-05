@@ -21,8 +21,8 @@ public class Jugador {
 		return this.paises;
 	}
 
-	public List<Object> obtenerEjercitos() {
-		return this.ejercitos;
+	public int cantidadEjercitos() {
+		return this.ejercitos.size();
 	}
 
 	public void agregarEjercitos(int cantidad) {
