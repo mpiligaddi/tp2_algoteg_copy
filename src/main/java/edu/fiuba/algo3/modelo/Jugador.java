@@ -13,12 +13,16 @@ public class Jugador {
 		ejercitos = new ArrayList<Object>();
 	}
 
+	public Object obtenerNombre() {
+		return nombre;
+	}
+
 	public List<String> obtenerPaises() {
 		return this.paises;
 	}
 
-	public Object obtenerNombre() {
-		return nombre;
+	public List<Object> obtenerEjercitos() {
+		return this.ejercitos;
 	}
 
 	public void agregarEjercitos(int cantidad) {

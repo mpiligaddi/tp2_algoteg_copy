@@ -49,4 +49,16 @@ public class IJuegoTest {
             .collect(Collectors.toList());
         assertEquals(new HashSet<>(juego.getPaises()), new HashSet<>(paisesDeJugadores));
     }
+
+    @Test
+    public void test04AgregarVariosSoldados() {
+        Juego juego = new Juego();
+        juego.agregarJugadores("Pablo", "Avneet", "Sasha", "Sam");
+        juego.agregarEjercitosAlJugador("Pablo", 3);
+        assertEquals(juego.ejercitosDe("Pablo").size(), 3);
+        juego.agregarEjercitosAlJugador("Pablo", 4);
+        assertEquals(juego.ejercitosDe("Pablo").size(), 7);
+    }
+
+    
 }

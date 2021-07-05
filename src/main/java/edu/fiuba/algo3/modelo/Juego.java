@@ -43,8 +43,16 @@ public class Juego {
 			.asignarEjercitosAPais(cantidad, pais);
 	}
 
-	public List<Object> ejercitosDe(String string) {
-		return Arrays.asList(new Object(), new Object(), new Object());
+	public List<Object> ejercitosDe(String nombre) {
+		return jugadores.stream()
+			.filter(j -> j.obtenerNombre() == nombre)
+			.findAny().get().ejercitos;
+	}
+
+	public int cantidadEjercitosDe(String nombre) {
+		return jugadores.stream()
+			.filter(j -> j.obtenerNombre() == nombre)
+			.findAny().get().ejercitos.size();
 	}
 
 	public int cantidadDeJugadores() {
