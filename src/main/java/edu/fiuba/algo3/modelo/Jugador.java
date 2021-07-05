@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Jugador {
 	String nombre;
-	List<String> paises;
+	List<Pais> paises;
 	List<Object> ejercitos;
 
 	public Jugador(String n) {
 		nombre = n;
-		paises = new ArrayList<String>();
+		paises = new ArrayList<Pais>();
 		ejercitos = new ArrayList<Object>();
 	}
 
@@ -17,7 +17,7 @@ public class Jugador {
 		return nombre;
 	}
 
-	public List<String> obtenerPaises() {
+	public List<Pais> obtenerPaises() {
 		return this.paises;
 	}
 
@@ -32,11 +32,11 @@ public class Jugador {
 			ejercitos.add(new Object());
 		}
 	}
-	public void asignarPais(String pais) {
+	public void asignarPais(Pais pais) {
 		paises.add(pais);
 	}
 
-	public void asignarEjercitosAPais(int cantidad, String pais) throws Exception {
+	public void asignarEjercitosAPais(int cantidad, Pais pais) throws Exception {
 		if(cantidad > ejercitos.size())
 			throw new Exception();
 		if (!paises.contains(pais)) 

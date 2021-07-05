@@ -60,5 +60,19 @@ public class IJuegoTest {
         assertEquals(juego.cantidadEjercitosDe("Pablo"), 7);
     }
 
-    
+    @Test
+    public void test05AtaqueDeUnPaisAOtro() {
+        Juego juego = new Juego();
+        juego.agregarJugadores("Pablo", "Mohammed");
+        juego.asignarPaisAJugador("Pablo", "Colombia");
+        juego.asignarPaisAJugador("Mohammed", "Venezuela");
+
+        juego.agregarEjercitosAlJugador("Pablo", 10);
+        juego.agregarEjercitosAlJugador("Mohammed", 10);
+
+        juego.agregarEjercitosAlPais("Colombia", 6);
+        juego.agregarEjercitosAlPais("Venezuela", 1);
+
+        assertDoesNotThrow(() -> juego.realizarAtaque("Colombia", 3, "Venezuela"));
+    }
 }

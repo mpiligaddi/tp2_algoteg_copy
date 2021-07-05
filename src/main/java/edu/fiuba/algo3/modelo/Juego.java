@@ -7,15 +7,18 @@ import java.util.stream.Collectors;
 
 public class Juego {
 	List<Jugador> jugadores;
-	List<String> paises = Arrays.asList(
+	List<Pais> paises = Arrays.asList(
 		"Puerto Rico", 
 		"Colombia", 
 		"Venezuela",
 		"Honduras",
 		"Guayana",
-		"Guatemala");
+		"Guatemala")
+		.stream()
+		.map(n -> new Pais(n))
+		.collect(Collectors.toList());
 	
-	public List<String> getPaises() {
+	public List<Pais> getPaises() {
 		return this.paises;
 	}
 
@@ -40,7 +43,7 @@ public class Juego {
 		jugadores.stream()
 			.filter(j -> j.obtenerNombre() == jugador)
 			.findAny().get()
-			.asignarEjercitosAPais(cantidad, pais);
+			.asignarEjercitosAPais(cantidad, paisPorNombre(pais));
 	}
 
 	public int cantidadEjercitosDe(String nombre) {
@@ -73,7 +76,7 @@ public class Juego {
 		jugadores.stream()
 			.filter(j -> j.nombre == nombreJugador)
 			.findAny().get()
-			.asignarPais(pais);
+			.asignarPais(paisPorNombre(pais));
 	}
 
 	public List<String> paisesDe(String nombre) {
@@ -81,18 +84,31 @@ public class Juego {
 			.filter(j -> j.obtenerNombre() == nombre)
 			.findAny().orElseThrow();
 
-		return jugador.obtenerPaises();
+		return jugador.obtenerPaises().stream()
+			.map(p -> p.obtenerNombre())
+			.collect(Collectors.toList());
 	}
 
-	public void realizarAtaque(String atacante, String defensor) {
-		Jugador jugadorAtacante = jugadores.stream()
-				.filter(j -> j.obtenerNombre() == atacante)
+	public void realizarAtaque(String paisAtacante, int i, String paisDefensor) throws Exception {
+		Pais atacante = paises.stream()
+				.filter(j -> j.obtenerNombre() == paisAtacante)
 				.findAny().orElseThrow();
 
-		Jugador jugadorDefensor = jugadores.stream()
-				.filter(j -> j.obtenerNombre() == defensor)
+		Pais defensor = paises.stream()
+				.filter(j -> j.obtenerNombre() == paisDefensor)
 				.findAny().orElseThrow();
 
-		jugadorAtacante.atacar(jugadorDefensor.obtenerCantidadEjercitos());
+		Ataque ataque = new Ataque(atacante, defensor, 3);
+	}
+
+	public void agregarEjercitosAlPais(String string, int i) {
+	}
+
+	//Auxiliares
+	
+	private Pais paisPorNombre(String nombre) {
+		return paises.stream()
+			.filter(p -> p.obtenerNombre() == nombre)
+			.findAny().get();
 	}
 }
