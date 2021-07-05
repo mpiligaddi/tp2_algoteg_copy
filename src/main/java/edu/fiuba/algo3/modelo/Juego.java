@@ -18,8 +18,10 @@ public class Juego {
 		.map(n -> new Pais(n))
 		.collect(Collectors.toList());
 	
-	public List<Pais> getPaises() {
-		return this.paises;
+	public List<String> getPaises() {
+		return this.paises.stream()
+			.map(p -> p.obtenerNombre())
+			.collect(Collectors.toList());
 	}
 
 	// Constructores 
