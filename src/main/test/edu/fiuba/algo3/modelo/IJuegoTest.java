@@ -9,23 +9,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class IJuegoTest {
     @Test
-    public void test00AgregarJugadores() {
-        Juego juego = new Juego();
-        juego.agregarJugadores("Pablo", "Avneet");
-        assertEquals(juego.cantidadDeJugadores(), 2);
+    public void test00AgregarJugadores() throws Exception {
+        String[] jugadores = { "Pablo", "Mohammed", "Alexis" };
+        Juego juego = new Juego(jugadores);
+        assertEquals(juego.cantidadDeJugadores(), 3);
     }
 
     @Test
     public void test01Agregar4Jugadores() {
-        Juego juego = new Juego();
-        juego.agregarJugadores("Pablo", "Avneet", "Sasha", "Sam");
-        assertEquals(juego.cantidadDeJugadores(), 4);
+        String[] jugadores = { };
+        assertThrows(Exception.class, () -> new Juego(jugadores) );
     }
 
     @Test
     public void test02ColocarEjercitos() throws Exception {
-        Juego juego = new Juego();
-        juego.agregarJugadores("Pablo", "Avneet", "Sasha", "Sam");
+        String[] jugadores = { "Pablo", "Mohammed", "Alexis" };
+        Juego juego = new Juego(jugadores);
         juego.agregarEjercitosAlJugador("Pablo", 3);
 
         assertThrows(Exception.class, () -> 
@@ -38,7 +37,7 @@ public class IJuegoTest {
     }
 
     @Test
-    public void test03AsignarPaisesAJugadores() {
+    public void test03AsignarPaisesAJugadores() throws Exception {
         String[] jugadores = { "Pedro", "Mohammed", "Alexis" };
         Juego juego = new Juego(jugadores);
         juego.asignarPaisesAleatoriamente();
@@ -55,8 +54,8 @@ public class IJuegoTest {
 
     @Test
     public void test04AgregarVariosSoldados() throws Exception {
-        Juego juego = new Juego();
-        juego.agregarJugadores("Pablo", "Avneet", "Sasha", "Sam");
+        String[] jugadores = {"Pablo", "Avneet", "Sasha", "Sam"};
+        Juego juego = new Juego(jugadores);
         juego.agregarEjercitosAlJugador("Pablo", 3);
         assertEquals(juego.cantidadEjercitosDe("Pablo"), 3);
         juego.agregarEjercitosAlJugador("Pablo", 4);
@@ -65,8 +64,8 @@ public class IJuegoTest {
 
     @Test
     public void test05AtaqueDeUnPaisAOtro() throws Exception {
-        Juego juego = new Juego();
-        juego.agregarJugadores("Pablo", "Mohammed");
+        String[] jugadores = {"Pablo", "Mohammed"};
+        Juego juego = new Juego(jugadores);
         juego.asignarPaisAJugador("Pablo", "Colombia");
         juego.asignarPaisAJugador("Mohammed", "Venezuela");
 

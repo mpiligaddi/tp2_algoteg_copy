@@ -29,10 +29,13 @@ public class Juego {
 		jugadores = new ArrayList<Jugador>();
 	}
 
-	public Juego(String[] nombresJugadores) {
+	public Juego(String[] nombresJugadores) throws Exception {
+		if ( nombresJugadores.length <= 0 )
+			throw new Exception();
 		jugadores = Arrays.asList(nombresJugadores)
 			.stream()
-			.map(n -> new Jugador(n)).collect(Collectors.toList());
+			.map(n -> new Jugador(n))
+			.collect(Collectors.toList());
 	}
 
 	// Métodos
