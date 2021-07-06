@@ -19,5 +19,9 @@ public class Pais {
 	public void agregarEjercitos(int cantidadEjercitos) {
         ejercitos += cantidadEjercitos;
 	}
+
+	public void atacar(Pais defensor, int cantSoldados) {
+		//TODO implementar ataque
+	}
     
 }

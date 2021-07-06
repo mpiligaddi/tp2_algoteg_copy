@@ -70,7 +70,7 @@ public class Juego {
 	}
 
 	public void asignarPaisesAleatoriamente() {
-		for(int i = 0; i < paises.size(); i++){ //TODO
+		for(int i = 0; i < paises.size(); i++){ //TODO hacer aleatorio
 			jugadores
 				.get(i % jugadores.size())
 				.asignarPais(paises.get(i));
@@ -94,7 +94,7 @@ public class Juego {
 			.collect(Collectors.toList());
 	}
 
-	public void realizarAtaque(String paisAtacante, int i, String paisDefensor) throws Exception {
+	public void realizarAtaque(String paisAtacante, int cantSoldados, String paisDefensor) throws Exception {
 		Pais atacante = paises.stream()
 				.filter(j -> j.obtenerNombre() == paisAtacante)
 				.findAny().orElseThrow();
@@ -103,7 +103,7 @@ public class Juego {
 				.filter(j -> j.obtenerNombre() == paisDefensor)
 				.findAny().orElseThrow();
 
-		Ataque ataque = new Ataque(atacante, defensor, 3);
+		atacante.atacar(defensor, cantSoldados);
 	}
 
 	public void agregarEjercitosAlPais(String pais, int cantidadEjercitos) {
