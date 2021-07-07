@@ -25,8 +25,8 @@ public class TiroDeDados {
         this.valores.sort(Comparator.reverseOrder());
     }
 
-    //compara los dados de mayor tamaño de cada Dados, uno a uno, y devuelve
-    // una lista de cual Dados gano
+    //compara los dados de mayor tamaño de cada TiroDeDados, uno a uno, y devuelve
+    // una lista de cual TiroDeDados gano
     public List<TiroDeDados> batallarConDesventaja(TiroDeDados rival) {
         //ordenar dados de mayor a menor
         this.ordenarDescendientemente();
