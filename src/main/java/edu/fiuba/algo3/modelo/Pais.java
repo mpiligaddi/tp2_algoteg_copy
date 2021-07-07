@@ -26,7 +26,7 @@ public class Pais {
         ejercitos += cantidadEjercitos;
 	}
 
-	public Boolean atacar(Pais defensor, int cantEjercitos) {
+/* 	public Boolean atacar(Pais defensor, int cantEjercitos) {
 		List<Integer> dadosAtacante = generarDados(Math.min(cantEjercitos, 3));
 		List<Integer> dadosDefensor = generarDados(Math.min(defensor.ejercitos, 3));
 		int victorias = (int) calcularGanador(dadosAtacante, dadosDefensor).stream()
@@ -37,6 +37,22 @@ public class Pais {
 		//es victorioso si derrota tantos dados 
 		//como ejercitos tiene el pais defensor
 		return victorias >= defensor.ejercitos;
+	} */
+
+	public Boolean atacar(Pais defensor, int cantEjercitos) {
+		//tirar dados
+		TiroDeDados dadosAtacante = new TiroDeDados(Math.min(cantEjercitos, 3));
+		TiroDeDados dadosDefensor = new TiroDeDados(Math.min(defensor.ejercitos, 3));
+		//calcular victorias de nuestros dados
+		long cantVictorias = dadosAtacante
+			.batallarConDesventaja(dadosDefensor)
+			.stream()
+			.filter(
+				ganador -> ganador == dadosAtacante
+			).count();
+		//es victorioso si derrota tantos dados 
+		//como ejercitos tiene el pais defensor
+		return cantVictorias >= defensor.ejercitos;
 	}
 
 	private List<List<Integer>> calcularGanador(List<Integer> dadosAtacante, List<Integer> dadosDefensor){
