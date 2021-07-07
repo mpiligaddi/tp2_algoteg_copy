@@ -17,7 +17,7 @@ public class PaisTest {
         atacante.agregarEjercitos(3);
         defensor.agregarEjercitos(3);
 
-        Boolean conquisto = atacante.atacar(new Pais("Canada"), 1);
-        assertEquals("false", conquisto);
+        Boolean conquisto = atacante.atacar(defensor, 1);
+        assertEquals(false, conquisto);
     }
 }
