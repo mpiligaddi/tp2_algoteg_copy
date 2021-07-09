@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-
+//ok
 public class Juego {
 	List<Jugador> jugadores;
 	List<Pais> paises = Arrays.asList(
