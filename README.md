@@ -7,7 +7,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 ## Grupo {N}
 
 * **Di Nardo, Chiara A.** - [chiaradinardo](https://github.com/chiaradinardo)
-* **Gaddi, María Pilar.** - [mpiligaddi](https://github.com/mpiligaddi)
+* **Gaddi, María Pilar** - [mpiligaddi](https://github.com/mpiligaddi)
 * **Pont, María Fernanda** - [Maferep](https://github.com/Maferep)
 * **Serrano, María Candela** - [cndeserrano](https://github.com/cndeserrano)
 
